@@ -1,0 +1,269 @@
+@font-face {
+    font-family: Blulows;
+    src: url(Blulows.ttf);
+}
+* {
+    font-family: Blulows;
+}
+body {
+    background-color: #adadad;
+    margin: 0;
+}
+#container {
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+#piano {
+    width: 50%;
+    height: 50%;
+    background-color: #393939;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+}
+#keys {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.keyset {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    height: 90%;
+    width: 90%;
+    justify-content: center;
+    display: flex;
+}
+li {
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+}
+.w {
+    width: 20%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+}
+.b {
+    width: 10%;
+    height: 50%;
+    margin-left: -3.5%;
+    margin-right: -3.5%;
+    z-index: 2;
+}
+.w div, .b div {
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.activew {
+    background-color: #eeeeee !important;
+}
+.activeb {
+    background-color: #111111 !important;
+}
+.w div {
+    background-color: #ffffff;
+    font-size: 30px;
+}
+.b div {
+    background-color: #333333;
+    font-size: 20px;
+    color: #ffffff;
+}
+.w div:hover {
+    background-color: #eeeeee;
+    cursor: pointer;
+}
+.b div:hover {
+    background-color: #111111;
+    cursor: pointer;
+}
+#divider {
+    width: 2%;
+    height: 100%;
+    background: #000000;
+}
+#spacing {
+    width: 100%;
+    height: 20%;
+    border-bottom: 5px solid #000000;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#title {
+    font-size: 3vw;
+    text-decoration: underline;
+    animation: titleAnim 10s infinite;
+}
+@keyframes titleAnim {
+    0% {
+        color: #3966ff;
+    }
+    50% {
+        color: #ffcc00;
+    }
+    100% {
+        color: #3966ff
+    }
+}
+button {
+    background-color: #111111;
+    color: #ffffff;
+    cursor: pointer;
+    position: absolute;
+}
+#add, .config, .remove {
+    bottom: 0;
+    left: 0;
+    aspect-ratio: 1;
+}
+#addtt, #configtt, #removett {
+    position: absolute;
+    background-color: #000033;
+    border: 1px solid #aaaaaa;
+    width: auto;
+    height: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    z-index: 3;
+    visibility: hidden;
+    top: -10px;
+    left: 20px;
+    white-space: nowrap;
+    padding: 5px;
+    pointer-events: none;
+}
+#add:hover #addtt, .config:hover #configtt, .remove:hover #removett {
+    visibility: visible;
+}
+#buttons {
+    position: relative;
+    height: 10%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+.remove {
+    left: auto;
+    right: 0;
+    bottom: 0;
+}
+#octave {
+    position: absolute;
+    bottom: 0;
+}
+#octave button {
+    position: relative;
+    aspect-ratio: 1;
+}
+#octavelabel {
+    color: #ffffff;
+}
+#configmenu {
+    position: absolute;
+    height: 60%;
+    aspect-ratio: 1;
+    background-color: #393939;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    z-index: 10;
+    flex-direction: column;
+}
+#configlabel {
+    color: white;
+    font-size: 4vh;
+    display: flex;
+    z-index: 10;
+    height: 10%;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+}
+#configcontainer {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#configcontainer ul {
+    flex-direction: column;
+    width: 20%;
+    z-index: 10;
+    justify-content: space-between;
+}
+.keylabel, .colon {
+    color: white;
+    font-size: 3vh;
+    width: 100%;
+    display: flex;
+    z-index: 10;
+}
+.keylabel {
+    justify-content: left;
+}
+.colon {
+    justify-content: center;
+}
+.keyc {
+    background-color: #222222;
+    border: 1px solid #ffffff;
+    display: flex;
+    justify-content: right;
+    color: #eeeeee;
+    z-index: 10;
+    padding: 10%;
+    height: 2%;
+    font-size: 2vh;
+    overflow: hidden;
+}
+#close {
+    color: #ff0000;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 2%;
+    font-size: 4vh;
+    cursor: pointer;
+    z-index: 10;
+}
+#close:hover {
+    color: #dd0000;
+}
+#cover {
+    background-color: #000000;
+    opacity: 0.1;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
